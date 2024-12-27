@@ -192,7 +192,7 @@
       "next_fail": "score",
       "next_success": "1000000"
     },
-    "100000": {
+    "1000000": {
       "question": "Who is the winner of Oscar 2024?",
       "screen_type": "MULTIPLE_ANSWERS",
       "options": [
