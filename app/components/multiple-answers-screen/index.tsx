@@ -1,6 +1,7 @@
-import { QuestionScreen } from "@/app/types";
+import { QuestionScreen, Settings } from "@/app/types";
 import areSetsEqualAlt from "@/app/utils/areSetsEqual";
 import client from "@/app/utils/client";
+import Progress from "../progress";
 import SelectAnswer from "./select-answer";
 
 interface MultipleAnswerScreenProps {
@@ -10,6 +11,10 @@ interface MultipleAnswerScreenProps {
 async function MultipleAnswerScreen({ screenId }: MultipleAnswerScreenProps) {
   const gql = `
     query {
+      settings {
+        flow,
+        currency
+      }
       screens {
         ${screenId} {
           question,
@@ -27,6 +32,7 @@ async function MultipleAnswerScreen({ screenId }: MultipleAnswerScreenProps) {
 
   const screenData = (await client.query(gql)) as {
     screens: { [key: string]: QuestionScreen };
+    settings: Settings;
   };
 
   const data = screenData.screens[screenId];
@@ -49,7 +55,10 @@ async function MultipleAnswerScreen({ screenId }: MultipleAnswerScreenProps) {
           score={data.score}
         />
       </section>
-      <aside>{/* TODO: render flow */}</aside>
+      <Progress
+        steps={screenData.settings.flow}
+        currency={screenData.settings.currency}
+      />
     </div>
   );
 }
