@@ -32,16 +32,22 @@ async function SingleAnswerScreen({ screenId }: SingleAnswerScreenProps) {
 
   console.log("single answer page level", data);
 
-  const getNext = async (selectedValue: string) => {
+  const isCorrect = async (selectedValue: string) => {
     "use server";
-    return selectedValue === data.answer ? data.next_success : data.next_fail;
+    return selectedValue === data.answer;
   };
 
   return (
     <div>
       <section>
         <h1>{data.question}</h1>
-        <SelectAnswer options={data.options} getNext={getNext} />
+        <SelectAnswer
+          options={data.options}
+          isCorrect={isCorrect}
+          nextSuccess={data.next_success}
+          nextFailure={data.next_fail}
+          score={data.score}
+        />
       </section>
       <aside>{/* TODO: render flow */}</aside>
     </div>

@@ -1,17 +1,19 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ReactNode } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 interface NavigateButtonProps {
   next: string;
   children: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const NavigateButton = ({ next, children }: NavigateButtonProps) => {
+const NavigateButton = ({ next, children, onClick }: NavigateButtonProps) => {
   const router = useRouter();
 
-  const handleNavigate = () => {
+  const handleNavigate: MouseEventHandler<HTMLButtonElement> = (e) => {
+    onClick?.(e);
     router.replace(`/${next}`);
   };
 

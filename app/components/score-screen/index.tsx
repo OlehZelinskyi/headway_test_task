@@ -1,6 +1,6 @@
 import { InfoScreen } from "@/app/types";
 import client from "@/app/utils/client";
-import NavigateButton from "../navigate-button/start-button";
+import TryAgainButton from "./try-again-button";
 
 interface ScoreScreenProps {
   screenId: string;
@@ -33,7 +33,7 @@ async function ScoreScreen({ screenId }: ScoreScreenProps) {
     <section>
       <h1>{data.info}</h1>
       <p>{score} earned</p>
-      <NavigateButton next={data.next}>Try again</NavigateButton>
+      <TryAgainButton next={data.next}>Try again</TryAgainButton>
     </section>
   );
 }

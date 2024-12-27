@@ -1,6 +1,6 @@
 import { InfoScreen } from "@/app/types";
 import client from "@/app/utils/client";
-import NavigateButton from "../navigate-button/start-button";
+import StartButton from "./start-button";
 
 interface StartScreenProps {
   screenId: string;
@@ -30,7 +30,7 @@ async function StartScreen({ screenId }: StartScreenProps) {
   return (
     <section>
       <h1>{data.info}</h1>
-      <NavigateButton next={data.next}>Start</NavigateButton>
+      <StartButton next={data.next}>Start</StartButton>
     </section>
   );
 }

@@ -1,18 +1,31 @@
 "use client";
 
+import { setCurrentStep, setEarned } from "@/app/redux/game.slice";
 import { Option } from "@/app/types";
 import { ChangeEventHandler, useEffect, useState } from "react";
-import NavigateButton from "../navigate-button/start-button";
+import { useDispatch } from "react-redux";
+import NavigateButton from "../navigate-button";
 import RadioGroupInput from "../radio-group-input";
 
 interface SelectAnswerProps {
   options: Option[];
-  getNext: (selected: string) => Promise<string>;
+  isCorrect: (selected: string) => Promise<boolean>;
+  nextSuccess: string;
+  nextFailure: string;
+  score: string;
 }
 
-const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
+const SelectAnswer = ({
+  options,
+  isCorrect,
+  nextSuccess,
+  nextFailure,
+  score,
+}: SelectAnswerProps) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
   const [next, setNext] = useState<string>("");
+
+  const dispatch = useDispatch();
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value } = e.target;
@@ -23,12 +36,23 @@ const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
   useEffect(() => {
     (async () => {
       if (selectedValue) {
-        const _next = await getNext(selectedValue);
+        const correct = await isCorrect(selectedValue);
+        const _next = correct ? nextSuccess : nextFailure;
 
         setNext(_next);
       }
     })();
-  }, [selectedValue, getNext]);
+  }, [isCorrect, nextFailure, nextSuccess, selectedValue]);
+
+  const handleSubmit = async () => {
+    const correct = await isCorrect(selectedValue);
+
+    if (correct) {
+      dispatch(setEarned(Number(score)));
+    }
+
+    dispatch(setCurrentStep(next));
+  };
 
   return (
     <div>
@@ -38,7 +62,9 @@ const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
         onChange={handleChange}
       />
       {Boolean(selectedValue) && (
-        <NavigateButton next={next}>Submit</NavigateButton>
+        <NavigateButton next={next} onClick={handleSubmit}>
+          Submit
+        </NavigateButton>
       )}
     </div>
   );

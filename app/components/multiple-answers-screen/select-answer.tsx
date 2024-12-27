@@ -1,18 +1,31 @@
 "use client";
 
+import { setCurrentStep, setEarned } from "@/app/redux/game.slice";
 import { Option } from "@/app/types";
 import { ChangeEventHandler, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import CheckboxGroupInput from "../checkbox-group-input";
-import NavigateButton from "../navigate-button/start-button";
+import NavigateButton from "../navigate-button";
 
 interface SelectAnswerProps {
   options: Option[];
-  getNext: (selected: string[]) => Promise<string>;
+  isCorrect: (selected: string[]) => Promise<boolean>;
+  nextSuccess: string;
+  nextFailure: string;
+  score: string;
 }
 
-const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
+const SelectAnswer = ({
+  options,
+  isCorrect,
+  nextSuccess,
+  nextFailure,
+  score,
+}: SelectAnswerProps) => {
   const [selectedValue, setSelectedValue] = useState<string[]>([]);
   const [next, setNext] = useState<string>("");
+
+  const dispatch = useDispatch();
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const { value } = e.target;
@@ -29,14 +42,23 @@ const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
   useEffect(() => {
     (async () => {
       if (selectedValue) {
-        const _next = await getNext(selectedValue);
+        const correct = await isCorrect(selectedValue);
+        const _next = correct ? nextSuccess : nextFailure;
 
         setNext(_next);
       }
     })();
-  }, [selectedValue, getNext]);
+  }, [isCorrect, nextFailure, nextSuccess, selectedValue]);
 
-  console.log("next", next);
+  const handleSubmit = async () => {
+    const correct = await isCorrect(selectedValue);
+
+    if (correct) {
+      dispatch(setEarned(Number(score)));
+    }
+
+    dispatch(setCurrentStep(next));
+  };
 
   return (
     <div>
@@ -46,7 +68,9 @@ const SelectAnswer = ({ options, getNext }: SelectAnswerProps) => {
         onChange={handleChange}
       />
       {Boolean(selectedValue.length) && (
-        <NavigateButton next={next}>Submit</NavigateButton>
+        <NavigateButton next={next} onClick={handleSubmit}>
+          Submit
+        </NavigateButton>
       )}
     </div>
   );
