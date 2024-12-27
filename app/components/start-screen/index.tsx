@@ -1,5 +1,6 @@
 import { InfoScreen } from "@/app/types";
 import client from "@/app/utils/client";
+import NavigateButton from "../navigate-button/start-button";
 
 interface StartScreenProps {
   screenId: string;
@@ -22,11 +23,16 @@ async function StartScreen({ screenId }: StartScreenProps) {
     screens: { [key: string]: InfoScreen };
   };
 
-  const data = JSON.stringify(screenData);
+  const data = screenData.screens[screenId];
 
   console.log("start page level", data);
 
-  return null;
+  return (
+    <section>
+      <h1>{data.info}</h1>
+      <NavigateButton next={data.next}>Start</NavigateButton>
+    </section>
+  );
 }
 
 export default StartScreen;

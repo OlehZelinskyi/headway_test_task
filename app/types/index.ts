@@ -33,5 +33,6 @@ export type Screen = InfoScreen | QuestionScreen;
 
 export interface QuestionsJSON {
   entry: string;
+  flow: string[];
   screens: Record<string, Screen>;
 }

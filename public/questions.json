@@ -1,5 +1,21 @@
 {
   "entry": "start",
+  "flow": [
+    "start",
+    "500",
+    "1000",
+    "2000",
+    "4000",
+    "8000",
+    "16000",
+    "32000",
+    "64000",
+    "125000",
+    "250000",
+    "500000",
+    "1000000",
+    "score"
+  ],
   "screens": {
     "start": {
       "info": "Who wants to be a millionaire?",
@@ -7,7 +23,7 @@
       "next": "500"
     },
     "score": {
-      "info": "Total score",
+      "info": "Total score:",
       "screen_type": "SCORE",
       "next": "start"
     },
