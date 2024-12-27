@@ -1,0 +1,195 @@
+{
+  "entry": "start",
+  "screens": {
+    "start": {
+      "info": "Who wants to be a millionaire?",
+      "screen_type": "START",
+      "next": "500"
+    },
+    "score": {
+      "info": "Total score",
+      "screen_type": "SCORE",
+      "next": "start"
+    },
+    "500": {
+      "question": "Who is the biggest animal in the list?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Owl", "value": "owl" },
+        { "label": "Whale", "value": "whale" },
+        { "label": "Fox", "value": "fox" },
+        { "label": "Turtle", "value": "turtle" }
+      ],
+      "answer": "whale",
+      "score": "500",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "1000"
+    },
+    "1000": {
+      "question": "How does the smallest piece is called?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Atom", "value": "atom" },
+        { "label": "Molecule", "value": "molecule" },
+        { "label": "Particle", "value": "particle" },
+        { "label": "Piece", "value": "piece" }
+      ],
+      "answer": "atom",
+      "score": "1000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "2000"
+    },
+    "2000": {
+      "question": "In what year Ukraine gained it's independency?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "1991", "value": "1991" },
+        { "label": "1992", "value": "1992" },
+        { "label": "1993", "value": "1993" },
+        { "label": "1994", "value": "1994" }
+      ],
+      "answer": "1991",
+      "score": "2000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "4000"
+    },
+    "4000": {
+      "question": "What is the name of the first book in the Stormlight Archive?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Words of Radiance", "value": "words_of_radiance" },
+        { "label": "Oathbringer", "value": "oathbringer" },
+        { "label": "The way of kings", "value": "the_way_of_kings" },
+        { "label": "Rhythm of War", "value": "rhythm_of_war" }
+      ],
+      "answer": "the_way_of_kings",
+      "score": "4000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "8000"
+    },
+    "8000": {
+      "question": "How many books are in original Harry Potter series?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Seven", "value": "7" },
+        { "label": "Five", "value": "5" },
+        { "label": "Three", "value": "3" },
+        { "label": "Nine", "value": "9" }
+      ],
+      "answer": "7",
+      "score": "8000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "16000"
+    },
+    "16000": {
+      "question": "Which countries are situated near the ocean?",
+      "screen_type": "MULTIPLE_ANSWERS",
+      "options": [
+        { "label": "USA", "value": "usa" },
+        { "label": "Ukraine", "value": "ukraine" },
+        { "label": "India", "value": "india" },
+        { "label": "Italy", "value": "italy" }
+      ],
+      "answer": ["usa", "india"],
+      "score": "16000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "32000"
+    },
+    "32000": {
+      "question": "Who lives the longest?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Bee", "value": "bee" },
+        { "label": "Ant", "value": "ant" },
+        { "label": "Turtle", "value": "turtle" },
+        { "label": "Shark", "value": "shark" }
+      ],
+      "answer": "turtle",
+      "score": "32000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "64000"
+    },
+    "64000": {
+      "question": "Select technology that is developed by Meta.",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Angular", "value": "angular" },
+        { "label": "Svelte", "value": "svelte" },
+        { "label": "React", "value": "react" },
+        { "label": "Vue", "value": "vue" }
+      ],
+      "answer": "react",
+      "score": "64000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "125000"
+    },
+    "125000": {
+      "question": "Select fruits only from the provided options.",
+      "screen_type": "MULTIPLE_ANSWERS",
+      "options": [
+        { "label": "Tomato", "value": "tomato" },
+        { "label": "Banana", "value": "banana" },
+        { "label": "Pumpkin", "value": "pumpkin" },
+        { "label": "Carrot", "value": "carrot" }
+      ],
+      "answer": ["tomato", "banana"],
+      "score": "125000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "250000"
+    },
+    "250000": {
+      "question": "Who is the author of 'The richest man in Babylon'?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "James Clear", "value": "clear" },
+        { "label": "J.K. Rowling", "value": "rowling" },
+        { "label": "Brandon Sanderson", "value": "sanderson" },
+        { "label": "George Clason", "value": "clason" }
+      ],
+      "answer": "clason",
+      "score": "250000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "500000"
+    },
+    "500000": {
+      "question": "Who played the main role in 'Gladiator' 2000?",
+      "screen_type": "SINGLE_ANSWER",
+      "options": [
+        { "label": "Russell Crowe", "value": "crowe" },
+        { "label": "Pedro Pascal", "value": "pascal" },
+        { "label": "Dwayne Johnson", "value": "the_rock" },
+        { "label": "John Cena", "value": "u_cant_see_me" }
+      ],
+      "answer": "crowe",
+      "score": "500000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "1000000"
+    },
+    "100000": {
+      "question": "Who is the winner of Oscar 2024?",
+      "screen_type": "MULTIPLE_ANSWERS",
+      "options": [
+        { "label": "Cillian Murphy", "value": "murphy" },
+        { "label": "Emma Stone", "value": "stone" },
+        { "label": "Kevin Hart", "value": "hart" },
+        { "label": "None of them", "value": "none" }
+      ],
+      "answer": ["murphy", "stone"],
+      "score": "1000000",
+      "currency": "usd",
+      "next_fail": "score",
+      "next_success": "score"
+    }
+  }
+}
