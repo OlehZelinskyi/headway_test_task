@@ -32,10 +32,6 @@ async function ScreenPage({ params }: ScreenPageProps) {
     screens: { [key: string]: Screen };
   };
 
-  const data = JSON.stringify(screenData);
-
-  console.log("data page level", data);
-
   return (
     <ScreenBuilder
       screenId={screenId}

@@ -1,5 +1,6 @@
-import { InfoScreen } from "@/app/types";
+import { InfoScreen, Settings } from "@/app/types";
 import client from "@/app/utils/client";
+import Earned from "./earned";
 import TryAgainButton from "./try-again-button";
 
 interface ScoreScreenProps {
@@ -9,6 +10,9 @@ interface ScoreScreenProps {
 async function ScoreScreen({ screenId }: ScoreScreenProps) {
   const gql = `
   query {
+    settings {
+      currency
+    }
     screens {
       ${screenId} {
         screen_type,
@@ -21,18 +25,16 @@ async function ScoreScreen({ screenId }: ScoreScreenProps) {
 
   const screenData = (await client.query(gql)) as {
     screens: { [key: string]: InfoScreen };
+    settings: Settings;
   };
 
   const data = screenData.screens[screenId];
-
-  console.log("score page level", data);
-
-  const score = 0;
+  const currency = screenData.settings.currency;
 
   return (
     <section>
       <h1>{data.info}</h1>
-      <p>{score} earned</p>
+      <Earned currency={currency} />
       <TryAgainButton next={data.next}>Try again</TryAgainButton>
     </section>
   );

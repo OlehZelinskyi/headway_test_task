@@ -25,8 +25,6 @@ async function StartScreen({ screenId }: StartScreenProps) {
 
   const data = screenData.screens[screenId];
 
-  console.log("start page level", data);
-
   return (
     <section>
       <h1>{data.info}</h1>

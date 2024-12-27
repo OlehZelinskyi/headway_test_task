@@ -24,15 +24,19 @@ export interface QuestionScreen {
   options: Option[];
   answer: string;
   score: string;
-  currency: string;
   next_fail: string;
   next_success: string;
 }
 
 export type Screen = InfoScreen | QuestionScreen;
 
+export interface Settings {
+  currency: string;
+  flow: string[];
+}
+
 export interface QuestionsJSON {
   entry: string;
-  flow: string[];
+  settings: Settings;
   screens: Record<string, Screen>;
 }

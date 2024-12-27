@@ -1,21 +1,24 @@
 {
   "entry": "start",
-  "flow": [
-    "start",
-    "500",
-    "1000",
-    "2000",
-    "4000",
-    "8000",
-    "16000",
-    "32000",
-    "64000",
-    "125000",
-    "250000",
-    "500000",
-    "1000000",
-    "score"
-  ],
+  "settings": {
+    "flow": [
+      "start",
+      "500",
+      "1000",
+      "2000",
+      "4000",
+      "8000",
+      "16000",
+      "32000",
+      "64000",
+      "125000",
+      "250000",
+      "500000",
+      "1000000",
+      "score"
+    ],
+    "currency": "usd"
+  },
   "screens": {
     "start": {
       "info": "Who wants to be a millionaire?",
@@ -38,7 +41,6 @@
       ],
       "answer": "whale",
       "score": "500",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "1000"
     },
@@ -53,7 +55,6 @@
       ],
       "answer": "atom",
       "score": "1000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "2000"
     },
@@ -68,7 +69,6 @@
       ],
       "answer": "1991",
       "score": "2000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "4000"
     },
@@ -83,7 +83,6 @@
       ],
       "answer": "the_way_of_kings",
       "score": "4000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "8000"
     },
@@ -98,7 +97,6 @@
       ],
       "answer": "7",
       "score": "8000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "16000"
     },
@@ -113,7 +111,6 @@
       ],
       "answer": ["usa", "india"],
       "score": "16000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "32000"
     },
@@ -128,7 +125,6 @@
       ],
       "answer": "turtle",
       "score": "32000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "64000"
     },
@@ -143,7 +139,6 @@
       ],
       "answer": "react",
       "score": "64000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "125000"
     },
@@ -158,7 +153,6 @@
       ],
       "answer": ["tomato", "banana"],
       "score": "125000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "250000"
     },
@@ -173,7 +167,6 @@
       ],
       "answer": "clason",
       "score": "250000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "500000"
     },
@@ -188,7 +181,6 @@
       ],
       "answer": "crowe",
       "score": "500000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "1000000"
     },
@@ -203,7 +195,6 @@
       ],
       "answer": ["murphy", "stone"],
       "score": "1000000",
-      "currency": "usd",
       "next_fail": "score",
       "next_success": "score"
     }

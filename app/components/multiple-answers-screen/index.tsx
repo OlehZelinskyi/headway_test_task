@@ -31,8 +31,6 @@ async function MultipleAnswerScreen({ screenId }: MultipleAnswerScreenProps) {
 
   const data = screenData.screens[screenId];
 
-  console.log("multiple answer page level", data);
-
   const isCorrect = async (selectedValue: string[]) => {
     "use server";
 

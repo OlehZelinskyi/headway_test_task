@@ -30,8 +30,6 @@ async function SingleAnswerScreen({ screenId }: SingleAnswerScreenProps) {
 
   const data = screenData.screens[screenId];
 
-  console.log("single answer page level", data);
-
   const isCorrect = async (selectedValue: string) => {
     "use server";
     return selectedValue === data.answer;
