@@ -88,3 +88,22 @@
   line-height: 1.45rem;
   font-weight: 400;
 }
+
+@media screen and (max-width: 1080px) {
+  .grid {
+    grid-template-columns: 20rem;
+    row-gap: 0.5rem;
+
+    justify-content: center;
+  }
+
+  .option {
+    height: 3.5rem;
+  }
+
+  .label,
+  .letter {
+    font-size: 0.875rem;
+    line-height: 1.015rem;
+  }
+}

@@ -33,7 +33,7 @@ async function StartScreen({ screenId }: StartScreenProps) {
       <div className={styles.hand}>
         <Image src="/hand.svg" alt="hand" fill />
       </div>
-      <div>
+      <div className={styles.start}>
         <h1 className={styles.heading}>{data.info}</h1>
         <StartButton next={data.next}>Start</StartButton>
       </div>

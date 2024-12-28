@@ -26,9 +26,11 @@ const NextButtons = ({ isCorrectAnswer, next }: NextButtonsProps) => {
     }
   };
 
+  const lastQuestion = next === settings?.result_screen;
+
   return (
     <div className={styles.buttons}>
-      {isCorrectAnswer && (
+      {isCorrectAnswer && !lastQuestion && (
         <NavigateButton
           next={settings?.result_screen ?? ""}
           onClick={handleTakeMoney}

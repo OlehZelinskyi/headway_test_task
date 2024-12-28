@@ -1,6 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: 26.25rem 26.25rem;
+  row-gap: 2rem;
+
+  border: 0;
+}
+
 .option {
-  max-width: 20rem;
-  height: 3.5rem;
+  max-width: 26.25rem;
+  height: 4.5rem;
 
   position: relative;
 }
@@ -62,6 +70,10 @@
   pointer-events: none;
 }
 
+.hexshape svg {
+  flex-grow: 1;
+}
+
 .letter {
   margin-right: 0.5rem;
   color: var(--orange-100);
@@ -75,4 +87,23 @@
   font-size: 1.25rem;
   line-height: 1.45rem;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1080px) {
+  .grid {
+    grid-template-columns: 20rem;
+    row-gap: 0.5rem;
+
+    justify-content: center;
+  }
+
+  .option {
+    height: 3.5rem;
+  }
+
+  .label,
+  .letter {
+    font-size: 0.875rem;
+    line-height: 1.015rem;
+  }
 }

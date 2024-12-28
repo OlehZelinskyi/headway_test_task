@@ -54,3 +54,15 @@
   color: var(--orange-120);
   border-color: var(--orange-120);
 }
+
+@media screen and (max-width: 1080px) {
+  .button {
+    max-width: 18rem;
+    height: 3rem;
+
+    border-radius: var(--rounded-sm);
+
+    font-size: 0.875rem;
+    line-height: 1.015rem;
+  }
+}

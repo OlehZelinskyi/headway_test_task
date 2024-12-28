@@ -31,3 +31,40 @@
 
   max-width: 39rem;
 }
+
+.start {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1080px) {
+  .bg {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding-top: 5rem;
+
+    padding-inline: 1rem;
+
+    align-items: center;
+    justify-content: initial;
+  }
+
+  .heading {
+    text-align: center;
+
+    font-size: 2rem;
+    line-height: 2.3125rem;
+
+    margin-bottom: 6.5rem;
+  }
+
+  .hand {
+    width: 18rem;
+    height: 12rem;
+  }
+
+  .start {
+    align-items: center;
+  }
+}

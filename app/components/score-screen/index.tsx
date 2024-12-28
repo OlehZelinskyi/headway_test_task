@@ -1,6 +1,8 @@
 import { InfoScreen, Settings } from "@/app/types";
 import client from "@/app/utils/client";
+import Image from "next/image";
 import Earned from "./earned";
+import styles from "./styles.module.css";
 import TryAgainButton from "./try-again-button";
 
 interface ScoreScreenProps {
@@ -32,10 +34,15 @@ async function ScoreScreen({ screenId }: ScoreScreenProps) {
   const currency = screenData.settings.currency;
 
   return (
-    <section>
-      <h1>{data.info}</h1>
-      <Earned currency={currency} />
-      <TryAgainButton next={data.next}>Try again</TryAgainButton>
+    <section className={styles.bg}>
+      <div className={styles.hand}>
+        <Image src="/hand.svg" alt="hand" fill />
+      </div>
+      <div>
+        <h1 className={styles.heading}>{data.info}</h1>
+        <Earned currency={currency} />
+        <TryAgainButton next={data.next}>Try again</TryAgainButton>
+      </div>
     </section>
   );
 }

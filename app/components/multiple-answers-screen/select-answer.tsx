@@ -8,6 +8,8 @@ import BaseButton from "../base-button";
 import CheckboxGroupInput from "../checkbox-group-input";
 import NextButtons from "../next-buttons";
 
+import styles from "./styles.module.css";
+
 interface SelectAnswerProps {
   options: Option[];
   isCorrect: (selected: string[]) => Promise<boolean>;
@@ -52,7 +54,7 @@ const SelectAnswer = ({
   };
 
   const showCheckButton =
-    Boolean(selectedValue) && typeof isCorrectAnswer === "undefined";
+    Boolean(selectedValue.length) && typeof isCorrectAnswer === "undefined";
 
   const showNextButtons = typeof isCorrectAnswer !== "undefined";
   return (
@@ -63,10 +65,16 @@ const SelectAnswer = ({
         onChange={handleChange}
         isCorrectAnswer={isCorrectAnswer}
       />
-      {showCheckButton && <BaseButton onClick={handleCheck}>Check</BaseButton>}
-      {showNextButtons && (
-        <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
-      )}
+      <div className={styles.buttons}>
+        {showCheckButton && (
+          <BaseButton className={styles.check} onClick={handleCheck}>
+            Check
+          </BaseButton>
+        )}
+        {showNextButtons && (
+          <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
+        )}
+      </div>
     </div>
   );
 };

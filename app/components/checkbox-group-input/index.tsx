@@ -21,7 +21,7 @@ const CheckboxGroupInput = ({
   const validated = typeof isCorrectAnswer !== "undefined";
 
   return (
-    <fieldset disabled={validated}>
+    <fieldset disabled={validated} className={styles.grid}>
       {options.map((option, index) => {
         const selected = value.includes(option.value);
 
@@ -47,7 +47,7 @@ const CheckboxGroupInput = ({
             <div className={styles["input-group"]}>
               <input
                 id={`${index}-option`}
-                type="radio"
+                type="checkbox"
                 value={option.value}
                 checked={selected}
                 onChange={onChange}

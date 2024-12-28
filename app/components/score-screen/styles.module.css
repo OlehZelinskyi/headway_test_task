@@ -1,0 +1,38 @@
+.bg {
+  height: 100%;
+  display: flex;
+
+  background-color: var(--black-5);
+
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: 5rem;
+}
+
+.hand {
+  width: 39rem;
+  height: 23rem;
+
+  position: relative;
+}
+
+.heading {
+  font-weight: 600;
+
+  font-size: 2rem;
+  line-height: 2.3125rem;
+  opacity: 0.5;
+
+  margin-bottom: 0.5rem;
+
+  max-width: 39rem;
+}
+
+.earned {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 600;
+
+  margin-bottom: 4rem;
+}

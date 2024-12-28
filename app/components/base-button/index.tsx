@@ -16,11 +16,16 @@ export interface BaseButtonProps
 const BaseButton = ({
   children,
   variant = "default",
+  className,
   ...rest
 }: BaseButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, variant === "outline" && styles.outline)}
+      className={clsx(
+        styles.button,
+        variant === "outline" && styles.outline,
+        className
+      )}
       {...rest}
     >
       {children}

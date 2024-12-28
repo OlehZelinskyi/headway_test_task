@@ -2,3 +2,10 @@
   display: flex;
   gap: 1.25rem;
 }
+
+@media screen and (max-width: 1080px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

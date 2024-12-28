@@ -61,7 +61,9 @@ const SelectAnswer = ({
       />
       <div className={styles.buttons}>
         {showCheckButton && (
-          <BaseButton onClick={handleCheck}>Check</BaseButton>
+          <BaseButton onClick={handleCheck} className={styles.check}>
+            Check
+          </BaseButton>
         )}
         {showNextButtons && (
           <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
