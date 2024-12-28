@@ -1,0 +1,26 @@
+.shape path {
+  fill: var(--white-100);
+  stroke: var(--black-40);
+}
+
+.risk {
+  height: 1px;
+  width: 1rem;
+  background-color: var(--black-40);
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  margin-left: 2.5rem;
+}

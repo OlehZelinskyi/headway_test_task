@@ -1,2 +1,4 @@
-2. Redirect to entry
-3. Styling
+1. Styling
+  1. CSS variables
+  2. Fonts
+  3. Button

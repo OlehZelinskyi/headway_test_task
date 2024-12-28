@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { MouseEventHandler, ReactNode } from "react";
+import styles from "./styles.module.css";
 
 interface NavigateButtonProps {
   next: string;
@@ -17,7 +18,11 @@ const NavigateButton = ({ next, children, onClick }: NavigateButtonProps) => {
     router.replace(`/${next}`);
   };
 
-  return <button onClick={handleNavigate}>{children}</button>;
+  return (
+    <button className={styles.button} onClick={handleNavigate}>
+      {children}
+    </button>
+  );
 };
 
 export default NavigateButton;

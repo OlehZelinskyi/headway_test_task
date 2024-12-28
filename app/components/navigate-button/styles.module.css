@@ -1,0 +1,38 @@
+.button {
+  width: 100%;
+  max-width: 18.5rem;
+  height: 4rem;
+
+  border: 0;
+  border-radius: var(--rounded-md);
+
+  background-color: var(--orange-100);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.25rem 1.5rem;
+
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.45rem;
+  color: var(--white-100);
+
+  cursor: pointer;
+
+  transition: background-color ease 0.5s;
+}
+
+.button:hover {
+  background-color: var(--orange-80);
+}
+
+.button:focus-visible {
+  outline: none;
+}
+
+.button:active {
+  background-color: var(--orange-120);
+}
