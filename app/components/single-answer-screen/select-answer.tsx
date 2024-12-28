@@ -8,6 +8,8 @@ import BaseButton from "../base-button";
 import NextButtons from "../next-buttons";
 import RadioGroupInput from "../radio-group-input";
 
+import styles from "./styles.module.css";
+
 interface SelectAnswerProps {
   options: Option[];
   isCorrect: (selected: string) => Promise<boolean>;
@@ -57,10 +59,14 @@ const SelectAnswer = ({
         onChange={handleChange}
         isCorrectAnswer={isCorrectAnswer}
       />
-      {showCheckButton && <BaseButton onClick={handleCheck}>Check</BaseButton>}
-      {showNextButtons && (
-        <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
-      )}
+      <div className={styles.buttons}>
+        {showCheckButton && (
+          <BaseButton onClick={handleCheck}>Check</BaseButton>
+        )}
+        {showNextButtons && (
+          <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
+        )}
+      </div>
     </div>
   );
 };

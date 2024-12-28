@@ -1,6 +1,14 @@
+.grid {
+  display: grid;
+  grid-template-columns: 26.25rem 26.25rem;
+  row-gap: 2rem;
+
+  border: 0;
+}
+
 .option {
-  max-width: 20rem;
-  height: 3.5rem;
+  max-width: 26.25rem;
+  height: 4.5rem;
 
   position: relative;
 }
@@ -60,6 +68,10 @@
   height: 100%;
 
   pointer-events: none;
+}
+
+.hexshape svg {
+  flex-grow: 1;
 }
 
 .letter {

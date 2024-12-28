@@ -12,8 +12,8 @@ const OptionShape = ({ className, children }: OptionShape) => {
     <div className={clsx(styles.container, className)}>
       <div className={clsx(styles.risk, "risk")} />
       <svg
-        width="288"
-        height="56"
+        // width="288"
+        // height="56"
         viewBox="0 0 288 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -21,7 +21,7 @@ const RadioGroupInput = ({
   const validated = typeof isCorrectAnswer !== "undefined";
 
   return (
-    <fieldset disabled={validated}>
+    <fieldset disabled={validated} className={styles.grid}>
       {options.map((option, index) => {
         const selected = value === option.value;
 

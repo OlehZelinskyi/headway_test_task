@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 import styles from "./styles.module.css";
 
@@ -8,12 +9,20 @@ export interface BaseButtonProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
+  variant?: "default" | "outline";
   children: ReactNode;
 }
 
-const BaseButton = ({ children, ...rest }: BaseButtonProps) => {
+const BaseButton = ({
+  children,
+  variant = "default",
+  ...rest
+}: BaseButtonProps) => {
   return (
-    <button className={styles.button} {...rest}>
+    <button
+      className={clsx(styles.button, variant === "outline" && styles.outline)}
+      {...rest}
+    >
       {children}
     </button>
   );

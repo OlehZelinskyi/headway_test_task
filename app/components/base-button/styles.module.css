@@ -25,6 +25,12 @@
   transition: background-color ease 0.5s;
 }
 
+.outline {
+  background-color: var(--white-100);
+  border: 2px solid var(--orange-100);
+  color: var(--orange-100);
+}
+
 .button:hover {
   background-color: var(--orange-80);
 }
@@ -35,4 +41,16 @@
 
 .button:active {
   background-color: var(--orange-120);
+}
+
+.outline:hover {
+  background-color: var(--orange-5);
+  color: var(--orange-100);
+  border-color: var(--orange-80);
+}
+
+.outline:active {
+  background-color: var(--orange-5);
+  color: var(--orange-120);
+  border-color: var(--orange-120);
 }

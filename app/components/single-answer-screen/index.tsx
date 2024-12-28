@@ -3,6 +3,8 @@ import client from "@/app/utils/client";
 import Progress from "../progress";
 import SelectAnswer from "./select-answer";
 
+import styles from "./styles.module.css";
+
 interface SingleAnswerScreenProps {
   screenId: string;
 }
@@ -42,21 +44,23 @@ async function SingleAnswerScreen({ screenId }: SingleAnswerScreenProps) {
   };
 
   return (
-    <div>
-      <section>
-        <h1>{data.question}</h1>
-        <SelectAnswer
-          options={data.options}
-          isCorrect={isCorrect}
-          nextSuccess={data.next_success}
-          nextFailure={data.next_fail}
-          score={data.score}
+    <div className={styles.bg}>
+      <div className={styles.container}>
+        <section className={styles.game}>
+          <h1 className={styles.question}>{data.question}</h1>
+          <SelectAnswer
+            options={data.options}
+            isCorrect={isCorrect}
+            nextSuccess={data.next_success}
+            nextFailure={data.next_fail}
+            score={data.score}
+          />
+        </section>
+        <Progress
+          steps={screenData.settings.flow}
+          currency={screenData.settings.currency}
         />
-      </section>
-      <Progress
-        steps={screenData.settings.flow}
-        currency={screenData.settings.currency}
-      />
+      </div>
     </div>
   );
 }

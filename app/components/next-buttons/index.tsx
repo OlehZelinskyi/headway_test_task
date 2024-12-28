@@ -5,6 +5,8 @@ import { RootState } from "@/app/redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import NavigateButton from "../navigate-button";
 
+import styles from "./styles.module.css";
+
 interface NextButtonsProps {
   isCorrectAnswer?: boolean;
   next: string;
@@ -25,11 +27,12 @@ const NextButtons = ({ isCorrectAnswer, next }: NextButtonsProps) => {
   };
 
   return (
-    <div>
+    <div className={styles.buttons}>
       {isCorrectAnswer && (
         <NavigateButton
           next={settings?.result_screen ?? ""}
           onClick={handleTakeMoney}
+          variant="outline"
         >
           Take the money
         </NavigateButton>

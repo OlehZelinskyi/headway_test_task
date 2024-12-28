@@ -1,0 +1,39 @@
+.bg {
+  background-color: var(--black-5);
+  height: 100%;
+}
+
+.container {
+  display: flex;
+
+  max-width: 90rem;
+  margin: 0 auto;
+
+  height: 100%;
+}
+
+.game {
+  flex-grow: 1;
+
+  padding-inline: 5rem;
+
+  padding-top: 8.3125rem;
+  padding-bottom: 7.625rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.question {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.325rem;
+
+  max-width: 39rem;
+}
+
+.buttons {
+  min-height: 4rem;
+  margin-top: 2rem;
+}
