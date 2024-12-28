@@ -36,3 +36,45 @@
 
   margin-bottom: 4rem;
 }
+
+@media screen and (max-width: 1080px) {
+  .bg {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    padding-top: 5rem;
+
+    padding-inline: 1rem;
+
+    align-items: center;
+    justify-content: initial;
+  }
+
+  .heading {
+    text-align: center;
+
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+
+    margin-bottom: 0.5rem;
+  }
+
+  .hand {
+    width: 18rem;
+    height: 12rem;
+  }
+
+  .again {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .earned {
+    font-size: 2rem;
+    line-height: 2.32rem;
+
+    margin-bottom: 6.375rem;
+  }
+}

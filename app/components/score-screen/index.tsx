@@ -38,7 +38,7 @@ async function ScoreScreen({ screenId }: ScoreScreenProps) {
       <div className={styles.hand}>
         <Image src="/hand.svg" alt="hand" fill />
       </div>
-      <div>
+      <div className={styles.again}>
         <h1 className={styles.heading}>{data.info}</h1>
         <Earned currency={currency} />
         <TryAgainButton next={data.next}>Try again</TryAgainButton>
