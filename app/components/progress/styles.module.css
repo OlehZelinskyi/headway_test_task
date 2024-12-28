@@ -71,11 +71,59 @@
   color: var(--black-40);
 }
 
-@media screen and (max-width: 1080px) {
-  .container {
-    flex-basis: 20rem;
+.cross {
+  display: none;
+}
 
-    justify-content: flex-start;
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 1360px) {
+  .burger {
+    display: block;
+    position: absolute;
+    top: 1.3125rem;
+    right: 1.3125rem;
+
+    cursor: pointer;
+  }
+
+  .container {
+    position: absolute;
+    right: -20rem;
+    top: 0;
+    bottom: 0;
+    width: 20rem;
+
+    justify-content: flex-end;
     padding-top: 4rem;
+
+    background-color: var(--black-5);
+
+    border-left: 1px solid var(--black-40);
+    transition: right ease 0.5s;
+  }
+
+  .container.visible {
+    right: 0;
+  }
+
+  .cross {
+    display: block;
+    position: absolute;
+    top: 1.3125rem;
+    right: 1.3125rem;
+
+    cursor: pointer;
+  }
+
+  .hexshape :global(.risk) {
+    width: 2.5625rem;
+  }
+
+  .label {
+    font-size: 0.875rem;
+    font-size: 1.015rem;
   }
 }
