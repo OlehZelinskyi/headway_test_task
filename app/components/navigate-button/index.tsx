@@ -1,16 +1,19 @@
 "use client";
 
+import BaseButton, { BaseButtonProps } from "@/app/components/base-button";
 import { useRouter } from "next/navigation";
-import { MouseEventHandler, ReactNode } from "react";
-import styles from "./styles.module.css";
+import { MouseEventHandler } from "react";
 
-interface NavigateButtonProps {
+interface NavigateButtonProps extends BaseButtonProps {
   next: string;
-  children: ReactNode;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
-const NavigateButton = ({ next, children, onClick }: NavigateButtonProps) => {
+const NavigateButton = ({
+  next,
+  children,
+  onClick,
+  ...rest
+}: NavigateButtonProps) => {
   const router = useRouter();
 
   const handleNavigate: MouseEventHandler<HTMLButtonElement> = (e) => {
@@ -19,9 +22,9 @@ const NavigateButton = ({ next, children, onClick }: NavigateButtonProps) => {
   };
 
   return (
-    <button className={styles.button} onClick={handleNavigate}>
+    <BaseButton onClick={handleNavigate} {...rest}>
       {children}
-    </button>
+    </BaseButton>
   );
 };
 

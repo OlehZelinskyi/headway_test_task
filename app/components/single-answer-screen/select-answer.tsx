@@ -1,10 +1,11 @@
 "use client";
 
-import { setCurrentStep, setEarned } from "@/app/redux/game.slice";
+import { setEarned } from "@/app/redux/game.slice";
 import { Option } from "@/app/types";
-import { ChangeEventHandler, useEffect, useState } from "react";
+import { ChangeEventHandler, useState } from "react";
 import { useDispatch } from "react-redux";
-import NavigateButton from "../navigate-button";
+import BaseButton from "../base-button";
+import NextButtons from "../next-buttons";
 import RadioGroupInput from "../radio-group-input";
 
 interface SelectAnswerProps {
@@ -23,6 +24,7 @@ const SelectAnswer = ({
   score,
 }: SelectAnswerProps) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState<boolean | undefined>();
   const [next, setNext] = useState<string>("");
 
   const dispatch = useDispatch();
@@ -33,27 +35,20 @@ const SelectAnswer = ({
     setSelectedValue(value);
   };
 
-  useEffect(() => {
-    (async () => {
-      if (selectedValue) {
-        const correct = await isCorrect(selectedValue);
-        const _next = correct ? nextSuccess : nextFailure;
-
-        setNext(_next);
-      }
-    })();
-  }, [isCorrect, nextFailure, nextSuccess, selectedValue]);
-
-  const handleSubmit = async () => {
+  const handleCheck = async () => {
     const correct = await isCorrect(selectedValue);
+    const _next = correct ? nextSuccess : nextFailure;
 
-    if (correct) {
-      dispatch(setEarned(Number(score)));
-    }
+    setNext(_next);
+    setIsCorrectAnswer(correct);
 
-    dispatch(setCurrentStep(next));
+    dispatch(setEarned(correct ? Number(score) : 0));
   };
 
+  const showCheckButton =
+    Boolean(selectedValue) && typeof isCorrectAnswer === "undefined";
+
+  const showNextButtons = typeof isCorrectAnswer !== "undefined";
   return (
     <div>
       <RadioGroupInput
@@ -61,10 +56,9 @@ const SelectAnswer = ({
         value={selectedValue}
         onChange={handleChange}
       />
-      {Boolean(selectedValue) && (
-        <NavigateButton next={next} onClick={handleSubmit}>
-          Submit
-        </NavigateButton>
+      {showCheckButton && <BaseButton onClick={handleCheck}>Check</BaseButton>}
+      {showNextButtons && (
+        <NextButtons next={next} isCorrectAnswer={isCorrectAnswer} />
       )}
     </div>
   );

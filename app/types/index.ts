@@ -33,6 +33,7 @@ export type Screen = InfoScreen | QuestionScreen;
 export interface Settings {
   currency: string;
   flow: string[];
+  result_screen: string;
 }
 
 export interface QuestionsJSON {

@@ -15,7 +15,8 @@
       "500000",
       "1000000"
     ],
-    "currency": "usd"
+    "currency": "usd",
+    "result_screen": "score"
   },
   "screens": {
     "start": {
