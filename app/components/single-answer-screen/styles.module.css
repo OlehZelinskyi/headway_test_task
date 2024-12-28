@@ -1,6 +1,6 @@
 .bg {
   background-color: var(--black-5);
-  height: 100%;
+  min-height: 100vh;
 }
 
 .container {
@@ -9,7 +9,7 @@
   max-width: 90rem;
   margin: 0 auto;
 
-  min-height: 100%;
+  min-height: 100vh;
 
   position: relative;
 }
