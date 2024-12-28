@@ -9,22 +9,34 @@ interface RadioGroupInputProps {
   options: Option[];
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  isCorrectAnswer: boolean | undefined;
 }
 
 const RadioGroupInput = ({
   options,
   value,
   onChange,
+  isCorrectAnswer,
 }: RadioGroupInputProps) => {
+  const validated = typeof isCorrectAnswer !== "undefined";
+
   return (
-    <fieldset>
+    <fieldset disabled={validated}>
       {options.map((option, index) => {
         const selected = value === option.value;
 
         return (
           <div
             key={index}
-            className={clsx(styles.option, selected && styles.selected)}
+            className={clsx(
+              styles.option,
+              selected && styles.selected,
+              selected &&
+                validated && {
+                  [styles.success]: isCorrectAnswer,
+                  [styles.failure]: !isCorrectAnswer,
+                }
+            )}
           >
             <OptionShape className={styles.hexshape}>
               <div>
