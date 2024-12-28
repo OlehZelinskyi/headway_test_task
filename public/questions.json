@@ -58,7 +58,7 @@
       "next_success": "2000"
     },
     "2000": {
-      "question": "In what year Ukraine gained it's independency?",
+      "question": "In what year Ukraine gained its independence?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
         { "label": "1991", "value": "1991" },

@@ -1,4 +1,3 @@
-1. Styling
-  1. CSS variables
-  2. Fonts
-  3. Button
+1. Progress component
+2. Progress component in menu
+3. Build and deploy
