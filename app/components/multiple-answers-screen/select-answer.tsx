@@ -61,6 +61,7 @@ const SelectAnswer = ({
         options={options}
         value={selectedValue}
         onChange={handleChange}
+        isCorrectAnswer={isCorrectAnswer}
       />
       {showCheckButton && <BaseButton onClick={handleCheck}>Check</BaseButton>}
       {showNextButtons && (
