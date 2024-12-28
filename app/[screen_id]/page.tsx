@@ -6,7 +6,7 @@ import client from "../utils/client";
 export async function generateStaticParams() {
   const questionsJSON = await getQuestionsJSON();
 
-  return Object.keys(questionsJSON).map((key) => ({ screen_id: key }));
+  return Object.keys(questionsJSON.screens).map((key) => ({ screen_id: key }));
 }
 
 interface ScreenPageProps {
@@ -17,6 +17,8 @@ interface ScreenPageProps {
 
 async function ScreenPage({ params }: ScreenPageProps) {
   const { screen_id: screenId } = await params;
+
+  console.log("s", screenId);
 
   const gql = `
   query {

@@ -2,18 +2,18 @@
   "entry": "start",
   "settings": {
     "flow": [
-      "500",
-      "1000",
-      "2000",
-      "4000",
-      "8000",
-      "16000",
-      "32000",
-      "64000",
-      "125000",
-      "250000",
-      "500000",
-      "1000000"
+      "q500",
+      "q1000",
+      "q2000",
+      "q4000",
+      "q8000",
+      "q16000",
+      "q32000",
+      "q64000",
+      "q125000",
+      "q250000",
+      "q500000",
+      "q1000000"
     ],
     "currency": "usd",
     "result_screen": "score"
@@ -22,14 +22,14 @@
     "start": {
       "info": "Who wants to be a millionaire?",
       "screen_type": "START",
-      "next": "500"
+      "next": "q500"
     },
     "score": {
       "info": "Total score:",
       "screen_type": "SCORE",
       "next": "start"
     },
-    "500": {
+    "q500": {
       "question": "Who is the biggest animal in the list?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -41,9 +41,9 @@
       "answer": "whale",
       "score": "500",
       "next_fail": "score",
-      "next_success": "1000"
+      "next_success": "q1000"
     },
-    "1000": {
+    "q1000": {
       "question": "How does the smallest piece is called?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -55,9 +55,9 @@
       "answer": "atom",
       "score": "1000",
       "next_fail": "score",
-      "next_success": "2000"
+      "next_success": "q2000"
     },
-    "2000": {
+    "q2000": {
       "question": "In what year Ukraine gained its independence?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -69,9 +69,9 @@
       "answer": "1991",
       "score": "2000",
       "next_fail": "score",
-      "next_success": "4000"
+      "next_success": "q4000"
     },
-    "4000": {
+    "q4000": {
       "question": "What is the name of the first book in the Stormlight Archive?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -83,9 +83,9 @@
       "answer": "the_way_of_kings",
       "score": "4000",
       "next_fail": "score",
-      "next_success": "8000"
+      "next_success": "q8000"
     },
-    "8000": {
+    "q8000": {
       "question": "How many books are in original Harry Potter series?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -97,9 +97,9 @@
       "answer": "7",
       "score": "8000",
       "next_fail": "score",
-      "next_success": "16000"
+      "next_success": "q16000"
     },
-    "16000": {
+    "q16000": {
       "question": "Which countries are situated near the ocean?",
       "screen_type": "MULTIPLE_ANSWERS",
       "options": [
@@ -111,9 +111,9 @@
       "answer": ["usa", "india"],
       "score": "16000",
       "next_fail": "score",
-      "next_success": "32000"
+      "next_success": "q32000"
     },
-    "32000": {
+    "q32000": {
       "question": "Who lives the longest?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -125,9 +125,9 @@
       "answer": "turtle",
       "score": "32000",
       "next_fail": "score",
-      "next_success": "64000"
+      "next_success": "q64000"
     },
-    "64000": {
+    "q64000": {
       "question": "Select technology that is developed by Meta.",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -139,9 +139,9 @@
       "answer": "react",
       "score": "64000",
       "next_fail": "score",
-      "next_success": "125000"
+      "next_success": "q125000"
     },
-    "125000": {
+    "q125000": {
       "question": "Select fruits only from the provided options.",
       "screen_type": "MULTIPLE_ANSWERS",
       "options": [
@@ -153,9 +153,9 @@
       "answer": ["tomato", "banana"],
       "score": "125000",
       "next_fail": "score",
-      "next_success": "250000"
+      "next_success": "q250000"
     },
-    "250000": {
+    "q250000": {
       "question": "Who is the author of 'The richest man in Babylon'?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -167,9 +167,9 @@
       "answer": "clason",
       "score": "250000",
       "next_fail": "score",
-      "next_success": "500000"
+      "next_success": "q500000"
     },
-    "500000": {
+    "q500000": {
       "question": "Who played the main role in 'Gladiator' 2000?",
       "screen_type": "SINGLE_ANSWER",
       "options": [
@@ -181,9 +181,9 @@
       "answer": "crowe",
       "score": "500000",
       "next_fail": "score",
-      "next_success": "1000000"
+      "next_success": "q1000000"
     },
-    "1000000": {
+    "q1000000": {
       "question": "Who is the winner of Oscar 2024?",
       "screen_type": "MULTIPLE_ANSWERS",
       "options": [

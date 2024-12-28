@@ -64,7 +64,7 @@ const Progress = ({ steps, currency }: ProgressProps) => {
           >
             <SmallOptionShape className={styles.hexshape}>
               <div className={styles.label}>
-                {formatCurrency(Number(step), currency)}
+                {formatCurrency(Number(step.slice(1)), currency)}
               </div>
             </SmallOptionShape>
           </div>
